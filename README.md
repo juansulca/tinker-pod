@@ -30,6 +30,8 @@ The print was made without supports with the following params:
 | Nozzle       | 0.4mm |
 | Infill       | 20%   |
 
+The STL files can be found in the `case/` directory.
+
 ## Firmware
 The current firmware consists of the screen setup and two generative art demos. The firmware is written in CircuitPython and should work
 by coping the content of the `firmware` directory to your microcontroller.
