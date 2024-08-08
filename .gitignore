@@ -1,0 +1,17 @@
+# Python-specific files
+__pycache__
+
+# Sphinx build-specific files
+_build
+
+# Virtual environment-specific files
+.env
+.venv
+
+# MacOS-specific files
+*.DS_Store
+
+# IDE-specific files
+.idea
+.vscode
+*~
