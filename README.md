@@ -2,7 +2,7 @@
 
 Open-Source | DIY | Multitool | Modular | Extendable
 
-The TinkerPod is digital multitool, a DIY device designed to engage with creative and curious minds.
+The TinkerPod a is digital multitool, a DIY device designed to engage with creative and curious minds.
 Drawing inspiration from gadgets like the Flipper Zero and Pwnagotchi, this project is built following
 the principles of Critical Engineering and Open-Source Hardware. The TinkerPod is an ideal multitool
 for designers and makers to explore, learn, modify and extend; make it your own!
@@ -47,6 +47,23 @@ More information about this library can be found in the official [docs](https://
 2. Place your microcontroller in the the breadboard.
 3. Connect your screen cable to the screen socket.
 4. Wire the screen cables following this diagram:
+```
+  QT PY             Screen
+┌───┐          ┌───┐
+│ A2  ┼──────┼ CS  │
+│     │          │     │
+│ A3  ┼──────┼ DC  │
+│     │          │     │
+│ GND ┼──────┼ GND │
+│     │          │     │
+│ 3V  ┼──────┼ VCC │
+│     │          │     │
+│ M0  ┼──────┼ DIN │
+│     │          │     │
+│ SCK ┼──────┼ CLK │
+└───┘          └───┘
+```
+
 5. Plug your USB C cable to your micro controller. If its the first time your using this microcontroller you might need to press the `boot` button located here:
 6. A new device should show up in your file system. Usually the device will be called `CIRCUITPY`
 7. Download the `code.py` file from this repository.
