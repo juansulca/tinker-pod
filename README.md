@@ -45,26 +45,28 @@ More information about this library can be found in the official [docs](https://
 ## Assembly
 1. Ensure your microcontroller has its pins soldered.
 2. Place your microcontroller in the the breadboard.
+![microcontroller breadboard](./imgs/place_breadboard.jpeg)
 3. Connect your screen cable to the screen socket.
+![screen assembly](./imgs/screen_assembly.jpeg)
 4. Wire the screen cables following this diagram:
 ```
-  QT PY          Screen  
- ┌─────┐         ┌─────┐ 
- │ A2  ┼─────────► CS  │ 
- │     │         │     │ 
- │ A3  ┼─────────► DC  │ 
- │     │         │     │ 
- │ GND ┼─────────► GND │ 
- │     │         │     │ 
- │ 3V  ┼─────────► VCC │ 
- │     │         │     │ 
- │ M0  ┼─────────► DIN │ 
- │     │         │     │ 
- │ SCK ┼─────────► CLK │ 
- └─────┘         └─────┘ 
+  QT PY          Screen
+ ┌─────┐         ┌─────┐
+ │ A2  ┼─────────► CS  │
+ │     │         │     │
+ │ A3  ┼─────────► DC  │
+ │     │         │     │
+ │ GND ┼─────────► GND │
+ │     │         │     │
+ │ 3V  ┼─────────► VCC │
+ │     │         │     │
+ │ M0  ┼─────────► DIN │
+ │     │         │     │
+ │ SCK ┼─────────► CLK │
+ └─────┘         └─────┘
 ```
-
 5. Plug your USB C cable to your micro controller. If its the first time your using this microcontroller you might need to press the `boot` button located here:
+![microcontroller usb](./imgs/board_usb.jpeg)
 6. A new device should show up in your file system. Usually the device will be called `CIRCUITPY`
 7. Download the `code.py` file from this repository.
 8. Copy and paste the file to the device in your file system.
@@ -73,9 +75,11 @@ More information about this library can be found in the official [docs](https://
 	1. Install circuit python and use its library manager.
 	2. Copy and paste the files from this repo `firmware/lib` to the `lib` folder in the root directory of your microcontroller.
 11. Your device should be up and running now.
-12. Place the screen in the top part of the case as follows:
+12. Place the screen in the top part of the case.
 13. Place the breadboard in the bottom part of the case.
+![microcontroller breadboard](./imgs/elements_case.jpeg)
 14. Close the case with some tape.
+![final assembly](./imgs/before_closing.jpeg)
 
 > ⚠️ Do not unplug the device from your computer without ejecting it properly.
 This can cause the firmware to go away.
