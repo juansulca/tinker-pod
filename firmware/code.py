@@ -32,8 +32,8 @@ splash.append(bg_sprite)
 
 def draw_line(x0, y0, x1, y1):
 	if x0 == x1:
-		for y in range(y0, y1):
-			if y >= HEIGHT:
+		for y in range(y0, y1+1):
+			if y > HEIGHT - 1:
 				return
 			bitmap[x0, y] = 1
 		return
@@ -42,7 +42,7 @@ def draw_line(x0, y0, x1, y1):
 	c = (y0 * x1 - y1 * x0) // (x1 - x0)
 	for x in range(x0, x1):
 		y = m * x + c
-		if y >= HEIGHT:
+		if y > HEIGHT - 1:
 				return
 		bitmap[x, y] = 1
 
@@ -85,17 +85,17 @@ def clear_quadrant(b):
 
 def type0Rect(n):
 	(x, y) = get_xy(n)
-	space = TILE_SIZE // 5
+	space = (TILE_SIZE - 1) // 5
 	for a in range(5):
 		draw_line(x, y + a * space, x + a * space, y)
 		if a % 2 == 0: continue
 		for b in range(1, 6):
 			draw_line(x, y + a*space + b, x + a*space + b, y)
-	for a in range(6):
-		draw_line(x + a*space, y + TILE_SIZE, x + TILE_SIZE, y + space * a)
+	for a in range(5):
+		draw_line(x + a*space, y + TILE_SIZE - 1, x + TILE_SIZE - 1, y + space * a)
 		if a % 2 != 0: continue
 		for b in range(1, space):
-			draw_line(x + a*space + b, y + TILE_SIZE, x + TILE_SIZE, y + space * a + b)
+			draw_line(x + a*space + b, y + TILE_SIZE - 1, x + TILE_SIZE - 1, y + space * a + b)
 
 def type1Rect(n):
 	(x, y) = get_xy(n)
@@ -136,6 +136,67 @@ def type8Rect(n):
 	(x, y) = get_xy(n)
 	draw_rect(x, y, TILE_SIZE)
 
+def type9Rect(n):
+	(x, y) = get_xy(n)
+	space = TILE_SIZE // 4
+	for a in range(space):
+		draw_line(x, y + 3 * space + a, x + 3 * space + a, y)
+		draw_line(x + a, y + TILE_SIZE - 1, x + TILE_SIZE - 1, y + a)
+
+def type10Rect(n):
+	(x, y) = get_xy(n)
+	space = TILE_SIZE // 3
+	for a in range(3):
+		for b in range(3):
+			if a % 2 == b % 2:
+				draw_rect(x + space * a, y + space * b, space)
+
+def type11Rect(n):
+	(x, y) = get_xy(n)
+	space = TILE_SIZE // 3
+	draw_rect(x + space, y, space, TILE_SIZE)
+
+def type12Rect(n):
+	(x, y) = get_xy(n)
+	space = TILE_SIZE // 4;
+	for a in range(space):
+		draw_line(x + a, y, x + TILE_SIZE, y + TILE_SIZE - a)
+		draw_line(x, y + a, x + TILE_SIZE - a, y + TILE_SIZE)
+
+def type13Rect(n):
+	(x, y) = get_xy(n)
+	space = TILE_SIZE // 6
+	draw_rect(x+space, y + space, space, 4*space)
+	draw_rect(x+4*space, y + space, space, 4*space)
+
+def type14Rect(n):
+	(x, y) = get_xy(n)
+	space = TILE_SIZE // 6
+	draw_rect(x+space, y + space, 4*space, space)
+	draw_rect(x+space, y + 4*space, 4*space, space)
+
+def type15Rect(n):
+	(x, y) = get_xy(n)
+	space = TILE_SIZE // 5
+	draw_rect(x+space, y + space, 3*space, 2*space)
+
+fns = [
+	type0Rect,
+	type1Rect,
+	type2Rect,
+	type3Rect,
+	type4Rect,
+	type7Rect,
+	type8Rect,
+	type9Rect,
+	type10Rect,
+	type11Rect,
+	type12Rect,
+	type13Rect,
+	type14Rect,
+	type15Rect
+]
+
 # tiling(4)
 type0Rect(0)
 type1Rect(1)
@@ -144,6 +205,25 @@ type3Rect(3)
 type4Rect(4)
 type7Rect(7)
 type8Rect(8)
+type9Rect(9)
+type10Rect(10)
+type11Rect(11)
+type12Rect(12)
+type13Rect(13)
+type14Rect(6)
+type15Rect(15)
+
+last_update_time = 0
+now = 0
 
 while(True):
-	pass
+	now = time.monotonic()
+	if last_update_time + 2 <= now:
+		i = random.randint(0, 15);
+		clear_quadrant(i)
+		time.sleep(0.1)
+		fn = random.choice(fns)
+		fn(i)
+		last_update_time = now
+
+	time.sleep(0.1)
