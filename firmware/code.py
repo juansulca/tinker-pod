@@ -5,37 +5,57 @@ import adafruit_ssd1327
 import random
 import time
 from math import ceil
+from digitalio import DigitalInOut, Direction, Pull
+from pong import Ball, Paddle, Score
 
 monotonic_time = time.monotonic_ns()
 random.seed(monotonic_time)
 
 displayio.release_displays()
-spi = board.SPI()
+i2c = board.STEMMA_I2C()
 
-display_bus = displayio.FourWire(spi, command=board.D3, chip_select=board.D2, baudrate=1000000)
+display_bus = displayio.I2CDisplay(i2c, device_address=0x3D)
 
 WIDTH = 128
 HEIGHT = 128
 TILE_SIZE = WIDTH // 4
+FPS = 60
+FPS_DELAY = 1 / FPS
 
 display = adafruit_ssd1327.SSD1327(display_bus, width=WIDTH, height=HEIGHT)
 
 splash = displayio.Group()
 display.root_group = splash
-bitmap = displayio.Bitmap(display.width, display.height, 2)
-color_palette = displayio.Palette(2)
-color_palette[0] = 0x000000  # White
-color_palette[1] = 0xFFFFFF  # Black
+bitmap = displayio.Bitmap(display.width, display.height, 3)
+color_palette = displayio.Palette(3)
+color_palette[0] = 0xDDDDDD  # White
+color_palette[1] = 0x000000  # Black
 bg_sprite = displayio.TileGrid(bitmap, pixel_shader=color_palette)
 
 splash.append(bg_sprite)
+
+btn_y = DigitalInOut(board.D1)
+btn_y.direction = Direction.INPUT
+btn_y.pull = Pull.UP
+
+btn_x = DigitalInOut(board.D3)
+btn_x.direction = Direction.INPUT
+btn_x.pull = Pull.UP
+
+btn_b = DigitalInOut(board.D0)
+btn_b.direction = Direction.INPUT
+btn_b.pull = Pull.UP
+
+btn_a = DigitalInOut(board.D2)
+btn_a.direction = Direction.INPUT
+btn_a.pull = Pull.UP
 
 def draw_line(x0, y0, x1, y1):
 	if x0 == x1:
 		for y in range(y0, y1+1):
 			if y > HEIGHT - 1:
 				return
-			bitmap[x0, y] = 1
+			bitmap[x0, y] = 0
 		return
 
 	m = (y1 - y0) // (x1 - x0)
@@ -44,7 +64,7 @@ def draw_line(x0, y0, x1, y1):
 		y = m * x + c
 		if y > HEIGHT - 1:
 				return
-		bitmap[x, y] = 1
+		bitmap[x, y] = 0
 
 def draw_rect(x, y, w, h = None):
 	if h is None:
@@ -52,7 +72,7 @@ def draw_rect(x, y, w, h = None):
 
 	for i in range(w):
 		for j in range(h):
-			bitmap[x + i, y + j] = 1
+			bitmap[x + i, y + j] = 0
 
 def tiling(l):
 	size = WIDTH // l
@@ -68,7 +88,7 @@ def tiling(l):
 def clear_screen():
 	for j in range(WIDTH):
 		for i in range(HEIGHT):
-			bitmap[i, j] = 0
+			bitmap[i, j] = 1
 
 def get_xy(n):
 	_y = n // 4
@@ -81,7 +101,7 @@ def clear_quadrant(b):
 	(x, y) = get_xy(b)
 	for i in range(TILE_SIZE):
 		for j in range(TILE_SIZE):
-			bitmap[x + i, y + j] = 0
+			bitmap[x + i, y + j] = 1
 
 def type0Rect(n):
 	(x, y) = get_xy(n)
@@ -197,33 +217,76 @@ fns = [
 	type15Rect
 ]
 
+clear_screen()
+
+# time.sleep(0.2)
+
 # tiling(4)
-type0Rect(0)
-type1Rect(1)
-type2Rect(2)
-type3Rect(3)
-type4Rect(4)
-type7Rect(7)
-type8Rect(8)
-type9Rect(9)
-type10Rect(10)
-type11Rect(11)
-type12Rect(12)
-type13Rect(13)
-type14Rect(6)
-type15Rect(15)
+# type0Rect(0)
+# type1Rect(1)
+# type2Rect(2)
+# type3Rect(3)
+# type4Rect(4)
+# type7Rect(7)
+# type8Rect(8)
+# type9Rect(9)
+# type10Rect(10)
+# type11Rect(11)
+# type12Rect(12)
+# type13Rect(13)
+# type14Rect(6)
+# type15Rect(15)
 
 last_update_time = 0
 now = 0
 
+left_paddle = Paddle(2, 52)
+splash.append(left_paddle.rect)
+
+right_paddle = Paddle(121, 52)
+splash.append(right_paddle.rect)
+
+
+ball = Ball(64, 64)
+splash.append(ball.circle)
+
+score = Score(54, 8)
+splash.append(score.label)
+
+def update():
+	left_paddle.update(not btn_y.value, not btn_b.value)
+	right_paddle.update(not btn_x.value, not btn_a.value)
+	ball.check_collisions(left_paddle, right_paddle)
+	ball.update()
+	score.update(ball)
+
+	if score.p1 >= 3 or score.p2 >= 3:
+		score.reset()
+		ball.reset()
+		left_paddle.reset()
+		right_paddle.reset()
+
+		while True:
+			if not btn_y.value:
+				break
+
 while(True):
 	now = time.monotonic()
-	if last_update_time + 2 <= now:
-		i = random.randint(0, 15);
-		clear_quadrant(i)
-		time.sleep(0.1)
-		fn = random.choice(fns)
-		fn(i)
-		last_update_time = now
 
-	time.sleep(0.1)
+	if last_update_time + FPS_DELAY <= now:
+
+			update()
+
+			last_update_time = now
+	# if not btn_y.value:
+	# 		n = random.randint(2, 6)
+	# 		clear_screen()
+	# 		time.sleep(0.2)
+	# 		tiling(n)
+			# time.sleep(0.1)
+	# 	i = random.randint(0, 15);
+	# 	clear_quadrant(i)
+	# 	time.sleep(0.1)
+	# 	fn = random.choice(fns)
+	# 	fn(i)
+			# last_update_time = now
