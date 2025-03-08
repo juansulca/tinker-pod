@@ -6,7 +6,10 @@ import random
 import time
 from math import ceil
 from digitalio import DigitalInOut, Direction, Pull
-from pong import Ball, Paddle, Score
+from pong import Pong
+from menu import Menu
+from tiling import Tiling
+from adafruit_display_shapes.line import Line
 
 monotonic_time = time.monotonic_ns()
 random.seed(monotonic_time)
@@ -27,6 +30,7 @@ display = adafruit_ssd1327.SSD1327(display_bus, width=WIDTH, height=HEIGHT)
 splash = displayio.Group()
 display.root_group = splash
 bitmap = displayio.Bitmap(display.width, display.height, 3)
+bitmap.fill(1)
 color_palette = displayio.Palette(3)
 color_palette[0] = 0xDDDDDD  # White
 color_palette[1] = 0x000000  # Black
@@ -86,9 +90,7 @@ def tiling(l):
 				draw_line(x, y + size, x + size, y)
 
 def clear_screen():
-	for j in range(WIDTH):
-		for i in range(HEIGHT):
-			bitmap[i, j] = 1
+	bitmap.fill(1)
 
 def get_xy(n):
 	_y = n // 4
@@ -217,11 +219,15 @@ fns = [
 	type15Rect
 ]
 
-clear_screen()
+time.sleep(0.2)
 
-# time.sleep(0.2)
+t = Tiling(splash)
+t.draw()
 
-# tiling(4)
+time.sleep(2)
+t.clear()
+t.cleanup(splash)
+
 # type0Rect(0)
 # type1Rect(1)
 # type2Rect(2)
@@ -240,53 +246,15 @@ clear_screen()
 last_update_time = 0
 now = 0
 
-left_paddle = Paddle(2, 52)
-splash.append(left_paddle.rect)
-
-right_paddle = Paddle(121, 52)
-splash.append(right_paddle.rect)
-
-
-ball = Ball(64, 64)
-splash.append(ball.circle)
-
-score = Score(54, 8)
-splash.append(score.label)
-
-def update():
-	left_paddle.update(not btn_y.value, not btn_b.value)
-	right_paddle.update(not btn_x.value, not btn_a.value)
-	ball.check_collisions(left_paddle, right_paddle)
-	ball.update()
-	score.update(ball)
-
-	if score.p1 >= 3 or score.p2 >= 3:
-		score.reset()
-		ball.reset()
-		left_paddle.reset()
-		right_paddle.reset()
-
-		while True:
-			if not btn_y.value:
-				break
+# pong = Pong(splash)
+menu = Menu(splash)
 
 while(True):
 	now = time.monotonic()
 
 	if last_update_time + FPS_DELAY <= now:
 
-			update()
+			# pong.update(btn_y, btn_x, btn_b, btn_a)
+			menu.update(btn_y, btn_x, btn_b, btn_a)
 
 			last_update_time = now
-	# if not btn_y.value:
-	# 		n = random.randint(2, 6)
-	# 		clear_screen()
-	# 		time.sleep(0.2)
-	# 		tiling(n)
-			# time.sleep(0.1)
-	# 	i = random.randint(0, 15);
-	# 	clear_quadrant(i)
-	# 	time.sleep(0.1)
-	# 	fn = random.choice(fns)
-	# 	fn(i)
-			# last_update_time = now
