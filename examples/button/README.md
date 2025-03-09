@@ -17,7 +17,7 @@ Gently connect the STEMMA QT/Qwiic cable to the Adafruit QT PY RP2040 and the 1.
 
 > Optionally you can follow the wiring diagram from v1 to use a waveshare screen.
 
-![Wiring Diagram](../screen/TinkerPod_screen.png)
+![Wiring Diagram](./TinkerPod_button.png)
 
 ## Flashing CircuitPython
 
