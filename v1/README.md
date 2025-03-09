@@ -50,22 +50,7 @@ More information about this library can be found in the official [docs](https://
    ![screen assembly](./imgs/screen_assembly.jpeg)
 4. Wire the screen cables following this diagram:
 
-```
-  QT PY          Screen
- ┌─────┐         ┌─────┐
- │ A2  ┼─────────► CS  │
- │     │         │     │
- │ A3  ┼─────────► DC  │
- │     │         │     │
- │ GND ┼─────────► GND │
- │     │         │     │
- │ 3V  ┼─────────► VCC │
- │     │         │     │
- │ M0  ┼─────────► DIN │
- │     │         │     │
- │ SCK ┼─────────► CLK │
- └─────┘         └─────┘
-```
+[Tinkerpod v1 wiring diagram]!(imgs/TinkerPod_v1.png)
 
 5. Plug your USB C cable to your micro controller. If its the first time your using this microcontroller you might need to press the `boot` button located here:
    ![microcontroller usb](./imgs/board_usb.jpeg)
