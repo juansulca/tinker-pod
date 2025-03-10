@@ -2,7 +2,7 @@
 
 ## Version 1
 
-The TinkerPod is currently in development, and the first version is expected to be released soon.
+The TinkerPod v1 is the simplest version of the family. It is designed to be a basic introduction to the TinkerPod ecosystem.
 
 ## Part list
 
@@ -75,4 +75,48 @@ More information about this library can be found in the official [docs](https://
 
 ### Add interaction with a vibration sensor
 
-...
+To add the same vibration sensor from version 2 to the TinkerPod v1.
+
+Follow this schematic:
+
+![vibration sensor schematic](./imgs/tp_v1_vibration_sensor.png)
+
+And update the `code.py` file to use the sensor following the [button example](/examples/button).
+
+For example:
+
+```python
+# code.py in firmware
+
+# create the digital input for the vibration sensor on Pin A1
+shake = digitalio.DigitalInOut(board.A1)
+shake.direction = digitalio.Direction.INPUT
+# enable pull up resistor
+shake.pull = digitalio.Pull.UP
+
+# store the shake state
+was_shaken = False
+
+while(True):
+	# read the shake sensor as any other button
+	if not shake.value:
+		# store the shake state
+		was_shaken = True
+
+	# if the device was shaken
+	if was_shaken:
+		# get a random quadrant
+		i = random.randint(0, 15);
+		# clear the space on the screen
+		clear_quadrant(i)
+		# get a random draw function
+		fn = random.choice(fns)
+		# draw the function on the screen
+		fn(i)
+		# clear the shaken state
+		was_shaken = False
+		# wait for 0.3 seconds
+		time.sleep(0.3)
+```
+
+Now the tinkerpod will react to a shake by updating the screen.
