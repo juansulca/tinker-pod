@@ -65,7 +65,7 @@ while True:
   is_pressed = not button.value
 
   if is_pressed:
-    # scale the text by 3
+    # scale the text by 6
     text.scale = 6
   else:
     # keep the text the original size
