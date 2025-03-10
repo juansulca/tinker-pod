@@ -1,3 +1,22 @@
+"""
+Tinkerpod v1.0
+================================================================================
+
+Firmware for tinkerpod v1.0
+
+* Author(s): Juan Sulca
+
+Implementation Notes
+--------------------
+
+**Software and Dependencies:**
+
+* Adafruit CircuitPython firmware for the supported boards:
+  https://github.com/adafruit/circuitpython/releases
+* Adafruit CircuitPython SSD1327 driver:
+  https://github.com/adafruit/Adafruit_CircuitPython_SSD1327
+"""
+
 import board
 import displayio
 import terminalio
@@ -6,28 +25,39 @@ import random
 import time
 from math import ceil
 
-monotonic_time = time.monotonic_ns()
-random.seed(monotonic_time)
-
-displayio.release_displays()
-spi = board.SPI()
-
-display_bus = displayio.FourWire(spi, command=board.D3, chip_select=board.D2, baudrate=1000000)
-
 WIDTH = 128
 HEIGHT = 128
 TILE_SIZE = WIDTH // 4
 
+# set seed for pseudo-random number generation
+monotonic_time = time.monotonic_ns()
+random.seed(monotonic_time)
+
+# display setup
+displayio.release_displays()
+# get the default SPI interface for the board
+spi = board.SPI()
+# create the SPI bus for using pins D3 and D2
+display_bus = displayio.FourWire(spi, command=board.D3, chip_select=board.D2, baudrate=1000000)
+# create the display controller
 display = adafruit_ssd1327.SSD1327(display_bus, width=WIDTH, height=HEIGHT)
 
+# set parent view for display
 splash = displayio.Group()
 display.root_group = splash
-bitmap = displayio.Bitmap(display.width, display.height, 2)
-color_palette = displayio.Palette(2)
-color_palette[0] = 0x000000  # White
-color_palette[1] = 0xFFFFFF  # Black
-bg_sprite = displayio.TileGrid(bitmap, pixel_shader=color_palette)
 
+# creat the canvas
+# create a 128x128 indexed image with 2 colors
+bitmap = displayio.Bitmap(display.width, display.height, 2)
+# create a 2-color palette, order of colors is important!
+color_palette = displayio.Palette(2)
+# White
+color_palette[0] = 0x000000
+# Black
+color_palette[1] = 0xFFFFFF
+# create a set of tiles that can be displayed on the screen
+bg_sprite = displayio.TileGrid(bitmap, pixel_shader=color_palette)
+# add the canvas to the splash screen
 splash.append(bg_sprite)
 
 def draw_line(x0, y0, x1, y1):
@@ -53,17 +83,6 @@ def draw_rect(x, y, w, h = None):
 	for i in range(w):
 		for j in range(h):
 			bitmap[x + i, y + j] = 1
-
-def tiling(l):
-	size = WIDTH // l
-	for i in range(l):
-		for j in range(l):
-			x = i * size
-			y = j * size
-			if random.random() > 0.5:
-				draw_line(x, y, x + size, y + size)
-			else:
-				draw_line(x, y + size, x + size, y)
 
 def clear_screen():
 	for j in range(WIDTH):
@@ -180,6 +199,7 @@ def type15Rect(n):
 	space = TILE_SIZE // 5
 	draw_rect(x+space, y + space, 3*space, 2*space)
 
+# store the available draw functions
 fns = [
 	type0Rect,
 	type1Rect,
@@ -197,7 +217,7 @@ fns = [
 	type15Rect
 ]
 
-# tiling(4)
+# Fill the screen with one of each draw functions
 type0Rect(0)
 type1Rect(1)
 type2Rect(2)
@@ -213,17 +233,17 @@ type13Rect(13)
 type14Rect(6)
 type15Rect(15)
 
-last_update_time = 0
-now = 0
-
+# run for ever
 while(True):
-	now = time.monotonic()
-	if last_update_time + 2 <= now:
-		i = random.randint(0, 15);
-		clear_quadrant(i)
-		time.sleep(0.1)
-		fn = random.choice(fns)
-		fn(i)
-		last_update_time = now
-
+    # get a random quadrant
+	i = random.randint(0, 15);
+	# clear the space on the screen
+	clear_quadrant(i)
+	# wait for 0.1 seconds
+	time.sleep(0.1)
+	# get a random draw function
+	fn = random.choice(fns)
+	# draw the function on the screen
+	fn(i)
+	# wait for 0.1 seconds
 	time.sleep(0.1)
