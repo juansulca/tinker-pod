@@ -15,9 +15,8 @@ The TinkerPod v1 is the simplest version of the family. It is designed to be a b
 
 ## 3D Printed Case
 
-3D print the case. This version was tested using Prusa mini with PLA. But the model should work with other materials and printers.
+This version was tested with PLA and PETG.
 The suggested orientation of the two parts is with the flat surfaces facing the build plate.
-This might be different for a resin 3D printers.
 The print was made without supports with the following params:
 
 | Param        | Value |
@@ -26,12 +25,12 @@ The print was made without supports with the following params:
 | Nozzle       | 0.4mm |
 | Infill       | 20%   |
 
-The STL files can be found in the `case/` directory.
+The STL files can be found in the [`case/`](case/) directory.
 
 ## Firmware
 
 The current firmware consists of the screen setup and two generative art demos. The firmware is written in CircuitPython and should work
-by coping the content of the `firmware` directory to your microcontroller.
+by coping the content of the [`firmware`](firmware/) directory to your microcontroller.
 
 ### Dependencies
 
