@@ -1,6 +1,4 @@
-# Tinker pod
-
-## Version 1
+# Tinkerpod v1
 
 The TinkerPod v1 is the simplest version of the family. It is designed to be a basic introduction to the TinkerPod ecosystem.
 
@@ -29,42 +27,47 @@ The STL files can be found in the [`case/`](case/) directory.
 
 ## Firmware
 
-The current firmware consists of the screen setup and two generative art demos. The firmware is written in CircuitPython and should work
-by coping the content of the [`firmware`](firmware/) directory to your microcontroller.
+The current firmware consists of the screen setup and a generative art demo.
+The firmware is written in CircuitPython and works
+by coping the content of the [`firmware`](firmware/) directory to the microcontroller.
 
 ### Dependencies
 
 The firmware depends on the following libraries:
 
-- `adafruit_ssd1327.mpy`
+- [Adafruit CircuitPython SSD1327 driver](https://github.com/adafruit/Adafruit_CircuitPython_SSD1327)
 
 More information about this library can be found in the official [docs](https://docs.circuitpython.org/projects/ssd1327/en/latest/)
 
 ## Assembly
 
-1. Ensure your microcontroller has its pins soldered.
-2. Place your microcontroller in the the breadboard.
+1. Flash circuit python on the QT PY RP2040.
+   1. Open the official [site](https://circuitpython.org/board/adafruit_qtpy_rp2040/) and download the latest version of circuit python.
+   2. While holding the _boot_ button in the QT PY, plug it into a computer using the USB-C cable. Different version of the QT PY might need a different button to access bootloader mode, please check the official [docs](https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython) for the specific board.
+   3. The device should appears mounted in the OS as **RPI-RP2**, this might be different for other boards other than the RP2040 board.
+   4. Drag and drop the `.UF2` file (downloaded in step 1) to the `RPI-RP2` boot drive.
+   5. After a couple of seconds the onboard neopixel (LED) will flash and a new drive will appear in the computer, this time it should be called **CIRCUITPY**.
+   6. ⚠️ Always eject the device before unplugging the cable.
+   7. The device is ready to be installed.
+2. Solder the pins to the QT PY.
+3. Place the pins in the microcontroller and carefully place both on the breadboard.
+4. Solder the pins to the microcontroller.
+5. Place the microcontroller in the the breadboard.
    ![microcontroller breadboard](./imgs/place_breadboard.jpeg)
-3. Connect your screen cable to the screen socket.
+6. Connect the screen cable to the screen socket.
    ![screen assembly](./imgs/screen_assembly.jpeg)
-4. Wire the screen cables following this diagram:
-
-![Tinkerpod v1 wiring diagram](./imgs/TinkerPod_v1.png)
-
-5. Plug your USB C cable to your micro controller. If its the first time your using this microcontroller you might need to press the `boot` button located here:
+7. Wire the screen cables following this diagram:
+   ![Tinkerpod v1 wiring diagram](./imgs/TinkerPod_v1.png)
+8. Plug the USB C cable to the micro controller.
    ![microcontroller usb](./imgs/board_usb.jpeg)
-6. A new device should show up in your file system. Usually the device will be called `CIRCUITPY`
-7. Download the `code.py` file from this repository.
-8. Copy and paste the file to the device in your file system.
-9. By this time, you should be able to see something in your screen.
-10. Install dependencies. There should be two options:
-    1. Install circuit python and use its library manager.
-    2. Copy and paste the files from this repo `firmware/lib` to the `lib` folder in the root directory of your microcontroller.
-11. Your device should be up and running now.
-12. Place the screen in the top part of the case.
-13. Place the breadboard in the bottom part of the case.
+9. A new device should show up in your file system. Usually the device will be called `CIRCUITPY`
+10. Download the [firmware/](firmware/) directory for this version.
+11. Copy all the files from the `firmware/` directory (`code.py` and `lib/`) to the `CIRCUITPY` drive.
+12. The device will restart and generative art function should start.
+13. Place the screen in the top part of the case.
+14. Place the breadboard in the bottom part of the case.
     ![microcontroller breadboard](./imgs/elements_case.jpeg)
-14. Close the case with some tape.
+15. Close the case with some tape.
     ![final assembly](./imgs/before_closing.jpeg)
 
 > ⚠️ Do not unplug the device from your computer without ejecting it properly.

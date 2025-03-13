@@ -37,7 +37,7 @@ A detailed assembly guide can be found along side the version files.
 
 The hardware for this project took inspiration from the following sources:
 
-- [Adafruit Charger BFF for QT Py] (https://github.com/adafruit/Adafruit-Charger-BFF-PCB?tab=readme-ov-file#adafruit-charger-bff-for-qt-py-pcb)
+- [Adafruit Charger BFF for QT Py](https://github.com/adafruit/Adafruit-Charger-BFF-PCB?tab=readme-ov-file#adafruit-charger-bff-for-qt-py-pcb)
 - [Soldered Inkplate 2](https://github.com/SolderedElectronics/Soldered-Inkplate-2-hardware-design/tree/main)
 
 ## Firmware
