@@ -2,84 +2,82 @@
 
 Open-Source | DIY | Multitool | Modular | Extendable
 
-The TinkerPod a is digital multitool, a DIY device designed to engage with creative and curious minds.
-Drawing inspiration from gadgets like the Flipper Zero and Pwnagotchi, this project is built following
-the principles of Critical Engineering and Open-Source Hardware. The TinkerPod is an ideal multitool
-for designers and makers to explore, learn, modify and extend; make it your own!
+The TinkerPod is an Open-Source hardware platform designed to appeal to makers, creative coders,
+and designers by providing a hackable and customizable hardware. Inspired by the evolution of
+multitools and influenced by contemporary devices like the Flipper Zero and SQRT,
+this project explores the application of critical making, and personal fabrication to Open-Source hardware.
+The TinkerPod is an ideal hardware platform for designers and makers to explore, learn, modify and extend; make it your own!
 
-## Version 0.99 (latest)
-The TinkerPod is currently in development, and the first version is expected to be released soon.
+## Versions
 
-## Part list
-| Part                  | Quantity |
-| --------------------- | -------- |
-| Adafruit QT PY RP2040 | 1        |
-| 1.5" Gray scale OLED  | 1        |
-| Tiny breadboard       | 1        |
-| Jumper wires          | 5        |
+The TinkerPod was designed to have 3 versions. All the versions are currently supported.
+The main difference between versions is the parts list, complexity of assembly and features.
 
-## 3D Printed Case
-3D print the case. This version was tested using Prusa mini with PLA. But the model should work with other materials and printers.
-The suggested orientation of the two parts is with the flat surfaces facing the build plate.
-This might be different for a resin 3D printers.
-The print was made without supports with the following params:
+// TinkerPod family photo.
 
-| Param        | Value |
-| ------------ | ----- |
-| Layer height | 0.2mm |
-| Nozzle       | 0.4mm |
-| Infill       | 20%   |
+- [v1 TinkerArt](v1/): This version offers generative art functionality and can be programmed to create unique art pieces.
+- [v2 TinkerPlay](v2/): This version offers a variety of games and functions, including games like pong, a timer, an etch-a-sketch inspired drawing function
+  and a generative art function out of the box.
+- [v3 TinkerPod](v3/): This version is an enhanced version of v2, running the same firmware but with additional features like a vibratioin sensor,
+  hardware debouncing for the buttons and a fully integrated PCB.
 
-The STL files can be found in the `case/` directory.
+## Hardware
+
+This project was designed to work around the QT PY RP2040 from Adafruit. Despite this, it is possible to run the TinkerPod with
+other microcontrollers with the same pinout and form factor from other manufacturers. This includes other boards from
+Adafruit (QT PY line), the XIAO boards from Seeed Studio, among others.
+
+TinkerPod v1, does not include a PCB and can be wired without tools using a tiny solderless breadboard, the display, microcontroller, and the case.
+
+For ease of assembly starting from V2, the Screen for the TinkerPod is a 1.5" grayscale OLED display with the SSD1327 controller using a STEMMA cable. This display can be found from Adafruit and
+other manufacturers but the Adafruit version is recommended due to the STEMMA cable, that reduces complexity for the assembly.
+
+The TinkerPod v2 and v3 include PCB designs and schematics and require soldering.
+A detailed assembly guide can be found along side the version files.
+
+The hardware for this project took inspiration from the following sources:
+
+- [Adafruit Charger BFF for QT Py] (https://github.com/adafruit/Adafruit-Charger-BFF-PCB?tab=readme-ov-file#adafruit-charger-bff-for-qt-py-pcb)
+- [Soldered Inkplate 2](https://github.com/SolderedElectronics/Soldered-Inkplate-2-hardware-design/tree/main)
 
 ## Firmware
-The current firmware consists of the screen setup and two generative art demos. The firmware is written in CircuitPython and should work
-by coping the content of the `firmware` directory to your microcontroller.
 
-### Dependencies
-The firmware depends on the following libraries:
-- `adafruit_ssd1327.mpy`
+All versions of the TinkerPod run on CircuitPython. The included firmware includes assets and base functionality.
+You can modify the the firmware and add or change the functionality of the TinkerPod.
 
-More information about this library can be found in the official [docs](https://docs.circuitpython.org/projects/ssd1327/en/latest/)
+If you want to get started writing your own firmware and functionality, you can start with the [examples](examples/) directory.
+This will provide the bassis for modifying the firmware and adding new functionality.
 
-## Assembly
-1. Ensure your microcontroller has its pins soldered.
-2. Place your microcontroller in the the breadboard.
-![microcontroller breadboard](./imgs/place_breadboard.jpeg)
-3. Connect your screen cable to the screen socket.
-![screen assembly](./imgs/screen_assembly.jpeg)
-4. Wire the screen cables following this diagram:
-```
-  QT PY          Screen
- ┌─────┐         ┌─────┐
- │ A2  ┼─────────► CS  │
- │     │         │     │
- │ A3  ┼─────────► DC  │
- │     │         │     │
- │ GND ┼─────────► GND │
- │     │         │     │
- │ 3V  ┼─────────► VCC │
- │     │         │     │
- │ M0  ┼─────────► DIN │
- │     │         │     │
- │ SCK ┼─────────► CLK │
- └─────┘         └─────┘
-```
-5. Plug your USB C cable to your micro controller. If its the first time your using this microcontroller you might need to press the `boot` button located here:
-![microcontroller usb](./imgs/board_usb.jpeg)
-6. A new device should show up in your file system. Usually the device will be called `CIRCUITPY`
-7. Download the `code.py` file from this repository.
-8. Copy and paste the file to the device in your file system.
-9. By this time, you should be able to see something in your screen.
-10. Install dependencies. There should be two options:
-	1. Install circuit python and use its library manager.
-	2. Copy and paste the files from this repo `firmware/lib` to the `lib` folder in the root directory of your microcontroller.
-11. Your device should be up and running now.
-12. Place the screen in the top part of the case.
-13. Place the breadboard in the bottom part of the case.
-![microcontroller breadboard](./imgs/elements_case.jpeg)
-14. Close the case with some tape.
-![final assembly](./imgs/before_closing.jpeg)
+## Case
 
-> ⚠️ Do not unplug the device from your computer without ejecting it properly.
-This can cause the firmware to go away.
+The case for the TinkerPod designed for 3D printing and can be printed using any FDM printer.
+Printing settings are provided with each version files.
+
+The cases for all versions were tested and printed using PLA and PETG. With the best results being
+achieved with PETG on a textured plate.
+
+Alternative cases can be found in the variants directory.
+
+## Documentation
+
+General guides can be found in the [docs](docs/) directory, including a simple guide to install CircuitPython and
+managing the dependencies for the firmware.
+
+## Acknowledgements
+
+The hardware for this project took inspiration from the following sources:
+
+- [Adafruit Charger BFF for QT Py] (https://github.com/adafruit/Adafruit-Charger-BFF-PCB)
+- [Soldered Inkplate 2](https://github.com/SolderedElectronics/Soldered-Inkplate-2-hardware-design/tree/main)
+- [SQRT](https://ksawerykomputery.com/works/sqrt)
+- [Button debounce article](https://hackaday.com/2015/12/09/embed-with-elliot-debounce-your-noisy-buttons-part-i/)
+
+## Contributions
+
+Contributions are welcome and appreciated. If you have any suggestions or improvements, please feel free to open an issue or submit a pull request.
+
+## License
+
+The TinkerPod firmware is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+// Add hardware license for the the other files
+// Add copyright for the other files
