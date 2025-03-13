@@ -1,0 +1,385 @@
+(footprint "JS202011AQN"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "JS (DPDT)")
+	(tags "Switch")
+	(property "Reference" "REF**"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "07c3d997-d2b9-421f-8691-eed9da5140e5")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "JS202011AQN"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "0574846c-5101-4039-ad16-aaea0f84caa2")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Footprint" "JS202011AQN"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "beee648b-6ca3-4ae1-9c41-da14c3b4b803")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.ckswitches.com/media/1422/js.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2addc426-bffe-4a67-8b82-3314649b7084")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "SWITCH SLIDE SPDT 300MA 6V"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a6d10b06-199c-4e13-8da1-52b3ca1aa4cc")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Height" "3"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8de9cdb3-408f-4480-8a81-9e6ad76472b7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Part Number" "611-JS202011AQN"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "87c0d039-9ddb-4621-975c-cc2389dba1d0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/CK/JS202011AQN?qs=LgMIjt8LuD%252Bmsz6wAeWWtQ%3D%3D"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "295b63ac-f5f6-4d76-8677-10584b5daf51")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Name" "C & K COMPONENTS"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9e93918b-767a-4c95-9925-3fda3f022f35")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Part_Number" "JS202011AQN"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e4d4044a-7e2f-4eef-b157-8179dffcba51")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -4.5 -2.025)
+		(end -4.5 1.575)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "70a0b5dd-cab9-442b-926b-508144edf8f0")
+	)
+	(fp_line
+		(start -4.5 1.575)
+		(end -3.5 1.575)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "285268d0-100d-4148-9254-cd76377a25f4")
+	)
+	(fp_line
+		(start -3.5 -2.025)
+		(end -4.5 -2.025)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0c9b81f8-7fc6-4ecd-bd94-06136efbb290")
+	)
+	(fp_line
+		(start -2.6 2.475)
+		(end -2.6 2.475)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0795ecec-8282-4f9f-9f89-6f9fc94e70f6")
+	)
+	(fp_line
+		(start -2.4 2.475)
+		(end -2.4 2.475)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "fb5b4bfb-c7a4-4701-8a32-74ba82307958")
+	)
+	(fp_line
+		(start 3.5 -2.025)
+		(end 4.5 -2.025)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "fbef1347-376e-41eb-8a5d-cc3e9324a7ab")
+	)
+	(fp_line
+		(start 4.5 -2.025)
+		(end 4.5 1.575)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7843dfba-f543-43ab-b47d-ba53324267ec")
+	)
+	(fp_line
+		(start 4.5 1.575)
+		(end 3.5 1.575)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "ae9717e8-6db9-4496-a7b5-0bac2a40066c")
+	)
+	(fp_arc
+		(start -2.6 2.475)
+		(mid -2.5 2.375)
+		(end -2.4 2.475)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b8d0d014-4865-4510-9ab9-04af5e643bee")
+	)
+	(fp_arc
+		(start -2.4 2.475)
+		(mid -2.5 2.575)
+		(end -2.6 2.475)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a320224a-2caf-4cd1-a0b2-669f730d971d")
+	)
+	(fp_line
+		(start -5.5 -3.575)
+		(end 5.5 -3.575)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "9db70afd-ec4d-468d-8e21-1fa73a01046d")
+	)
+	(fp_line
+		(start -5.5 3.575)
+		(end -5.5 -3.575)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "15e6a0a6-95ea-468d-afd4-f28b4bf282c8")
+	)
+	(fp_line
+		(start 5.5 -3.575)
+		(end 5.5 3.575)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "3817d44a-a205-4aa1-9749-1ec89dc524c8")
+	)
+	(fp_line
+		(start 5.5 3.575)
+		(end -5.5 3.575)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "3c7dff03-69da-4686-a95e-fe0263be6c1d")
+	)
+	(fp_line
+		(start -4.5 -2.025)
+		(end 4.5 -2.025)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "745c362c-8903-4030-966f-e53a5e49b804")
+	)
+	(fp_line
+		(start -4.5 1.575)
+		(end -4.5 -2.025)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "19dba5a5-e453-483d-95d7-e1bc24df79b1")
+	)
+	(fp_line
+		(start 4.5 -2.025)
+		(end 4.5 1.575)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "e5b368ba-7674-4244-8b66-f9ee4935e5e5")
+	)
+	(fp_line
+		(start 4.5 1.575)
+		(end -4.5 1.575)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "afd419d6-d1ab-477d-93a2-922f23e28d0b")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "ee251b9c-b469-409f-9575-a04ecb939112")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at -2.5 1.425)
+		(size 1.4 1.4)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ad2160e2-670e-4fad-83c5-10f620914d59")
+	)
+	(pad "2" thru_hole circle
+		(at 0 1.425)
+		(size 1.4 1.4)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "c51c9c46-8de8-4f81-8147-56f4cf1bfd41")
+	)
+	(pad "3" thru_hole circle
+		(at 2.5 1.425)
+		(size 1.4 1.4)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "8a9d4f55-bd88-475c-9b09-1bc8ca13115f")
+	)
+	(pad "4" thru_hole circle
+		(at -2.5 -1.875)
+		(size 1.4 1.4)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e4744cf8-2bc6-480b-85de-c69c38cd5da0")
+	)
+	(pad "5" thru_hole circle
+		(at 0 -1.875)
+		(size 1.4 1.4)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ba9fdd5b-760f-4b0b-b35d-2b75878809fb")
+	)
+	(pad "6" thru_hole circle
+		(at 2.5 -1.875)
+		(size 1.4 1.4)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "3f6d6ab7-7554-49a6-a37d-737bfff99517")
+	)
+	(model "JS202011AQN.stp"
+		(offset
+			(xyz 0 0.3000000074 1.669999932)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 0 0)
+		)
+	)
+)

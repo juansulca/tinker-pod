@@ -1,0 +1,371 @@
+(footprint "B2BPHSM4TBLFSN"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "B2B-PH-SM4-TB(LF)(SN)-3")
+	(tags "Connector")
+	(property "Reference" "REF**"
+		(at -0.8 7 0)
+		(layer "F.SilkS")
+		(uuid "2e769c55-2d6a-44a0-a5af-9a501234d083")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "Conn_01x02_MountingPin"
+		(at 0 1.25 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "d21f5819-27d1-4f88-9af5-f7d321278e52")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Footprint" "B2BPHSM4TBLFSN"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ceb58874-b205-4171-b4f4-1af19a827895")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5b44453c-1eaa-4e35-8b1b-ec367b10458e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Connector Header Surface Mount 2 position 0.079\" (2.00mm)"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e4bec3a7-d61a-46d5-a369-db5e91ab49ff")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Height" "6.6"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6ac4583a-3c5f-4619-8d5e-d69fe6335ad0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Part Number" "N/A"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "970024d9-70cb-4234-a174-a5da73344f52")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/JST-Commercial/B2B-PH-SM4-TBLFSN?qs=QpmGXVUTftEVCi4DgEfWYw%3D%3D"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1644f44d-8ed8-456c-9c01-293ed9435517")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Name" "JST (JAPAN SOLDERLESS TERMINALS)"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c8bb8ca8-f353-475c-98a5-0ae411fbe2ce")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Part_Number" "B2B-PH-SM4-TB(LF)(SN)"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9ee14086-727b-403f-bb42-186cb7c72b7b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -4 2.5)
+		(end -2 2.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1d9cb8a8-29aa-4555-88d5-3449708e5a1e")
+	)
+	(fp_line
+		(start -3.975 -2.5)
+		(end 3.975 -2.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0ecc0b7f-c7c0-4865-bd3a-05b600c28195")
+	)
+	(fp_line
+		(start -3.975 -2)
+		(end -3.975 -2.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b7ebab01-ecf6-4009-bb5e-9826798fe34b")
+	)
+	(fp_line
+		(start -3.975 2)
+		(end -4 2.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "2293663b-be4f-410f-925a-b722c1416a74")
+	)
+	(fp_line
+		(start -1.1 5.5)
+		(end -1.1 5.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a0ea3222-23be-4ea1-b161-22edd6eec13c")
+	)
+	(fp_line
+		(start -0.9 5.5)
+		(end -0.9 5.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "95ff68b1-2906-4f60-9f30-b7202d1ef3f0")
+	)
+	(fp_line
+		(start 2 2.5)
+		(end 3.975 2.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d66e944a-109e-4fbd-aa74-753b3b95329b")
+	)
+	(fp_line
+		(start 3.975 -2.5)
+		(end 3.975 -2)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "54356446-361a-41f0-843e-9e80f766a9b1")
+	)
+	(fp_line
+		(start 3.975 2.5)
+		(end 3.975 2)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b82ccac9-5c4d-447c-ac6a-e52703ea37fd")
+	)
+	(fp_arc
+		(start -1.1 5.5)
+		(mid -1 5.4)
+		(end -0.9 5.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "bf0fcd92-5d8e-4902-baef-abdf9aaeb0f4")
+	)
+	(fp_arc
+		(start -0.9 5.5)
+		(mid -1 5.6)
+		(end -1.1 5.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "29bb5e57-c2df-41af-8072-f8fcb4a25f47")
+	)
+	(fp_line
+		(start -5.2 -3.5)
+		(end 5.2 -3.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "e89cedd3-778a-427b-bae7-d55d322b722c")
+	)
+	(fp_line
+		(start -5.2 6)
+		(end -5.2 -3.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "6322b7c8-965a-42ee-bdb7-b6a29c86018c")
+	)
+	(fp_line
+		(start 5.2 -3.5)
+		(end 5.2 6)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a3511f54-adf6-4b02-aa27-64969c413c6f")
+	)
+	(fp_line
+		(start 5.2 6)
+		(end -5.2 6)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "bc0826ab-373c-4deb-8bb9-3acf45b98e4a")
+	)
+	(fp_line
+		(start -3.975 -2.5)
+		(end 3.975 -2.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "6bbaedbb-3bd2-4f19-af59-a72d368d615a")
+	)
+	(fp_line
+		(start -3.975 2.5)
+		(end -3.975 -2.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "b0a0afa9-7cc2-4e5b-895f-6e75752385df")
+	)
+	(fp_line
+		(start 3.975 -2.5)
+		(end 3.975 2.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "9f30fb7f-bcde-4b10-88a9-491cb6cb53ef")
+	)
+	(fp_line
+		(start 3.975 2.5)
+		(end -3.975 2.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "d2f529be-4363-427f-90aa-adba673b8794")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 1.25 0)
+		(layer "F.Fab")
+		(uuid "867d5bca-2249-4ed7-940e-7dbcc5584f63")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -1 2.25)
+		(size 1 5.5)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "9b24f5de-47bd-4f4e-8f73-071f9ee8f0e6")
+	)
+	(pad "2" smd rect
+		(at 1 2.25)
+		(size 1 5.5)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "1f96d743-ed03-4621-ae02-64ab21c81766")
+	)
+	(pad "3" smd rect
+		(at -3.4 0)
+		(size 1.6 3)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "4cc980b2-9a08-45f7-a7a9-0f7423377933")
+	)
+	(pad "4" smd rect
+		(at 3.4 0)
+		(size 1.6 3)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "58b9ad50-acc5-4d31-b8a6-43a992250566")
+	)
+	(model "B2B-PH-SM4-TB_LF__SN_.stp"
+		(offset
+			(xyz -5.39 -6.4 -6.77)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

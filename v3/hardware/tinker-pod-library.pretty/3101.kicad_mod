@@ -1,0 +1,347 @@
+(footprint "3101"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "3101-2")
+	(tags "Switch")
+	(property "Reference" "REF**"
+		(at 4.25 2.25 360)
+		(layer "F.SilkS")
+		(uuid "71ee4f5b-d5fc-4d77-b277-719f5c785233")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "3101"
+		(at 4.25 2.25 360)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "ca079b1c-f9a0-4ce4-b856-5b65ef396075")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Footprint" "3101"
+		(at 0 0 360)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8821008e-2b9e-40fc-9ae9-73ecc8961e98")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 360)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9c06e62e-1978-4bd2-897d-deebbc16d373")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Adafruit Industries Soft Tactile Button (8mm) x 10"
+		(at 0 0 360)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0ca3da68-f281-4c76-a7eb-b997c935c31c")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Height" "6"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9cb50932-4130-4507-9ae4-4aded18d2601")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Part Number" "485-3101"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "717685c4-1e8d-40c7-a85b-d335717d83bb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Adafruit/3101?qs=IP4CA2YhK0BHSMghUFBXjQ%3D%3D"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "21696ef3-fa24-4a3e-be79-ba74da367a8b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Name" "Adafruit"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1763d39d-da9b-482b-b93c-b4a67e569019")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Part_Number" "3101"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5bae57b2-a504-423d-97a4-11337ca91e7d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start 8.15 6.15)
+		(end 8.15 5.75)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a63d5aad-4ed4-494e-b60f-8d422307d310")
+	)
+	(fp_line
+		(start 8.15 1.25)
+		(end 8.15 3.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6327d104-1823-447d-9e0c-c9de63356de1")
+	)
+	(fp_line
+		(start 8.15 -1.65)
+		(end 8.15 -1.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "091fd006-8a79-462f-acc3-7e5bda2fe30a")
+	)
+	(fp_line
+		(start 0.35 6.15)
+		(end 8.15 6.15)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "62909552-3c43-4dd0-9adf-4e8e854ff89e")
+	)
+	(fp_line
+		(start 0.35 5.75)
+		(end 0.35 6.15)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "ea262630-2f35-4463-aa86-baf852461e3b")
+	)
+	(fp_line
+		(start 0.35 1.25)
+		(end 0.35 3.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c5fd93f4-6b65-4cbf-9aeb-eb0c84240ac8")
+	)
+	(fp_line
+		(start 0.35 -1.25)
+		(end 0.35 -1.65)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b8bb2fed-2ecb-40e3-8c82-4651a75974f8")
+	)
+	(fp_line
+		(start 0.35 -1.65)
+		(end 8.15 -1.65)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "78b22ea0-c4fe-418d-a80d-36693b373eb7")
+	)
+	(fp_line
+		(start 10.247 7.15)
+		(end -1.747 7.15)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "726f4035-84e1-425f-97af-ea7538bfc22b")
+	)
+	(fp_line
+		(start 10.247 -2.65)
+		(end 10.247 7.15)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "b3a49ade-a849-4192-b674-0cdf9b866494")
+	)
+	(fp_line
+		(start -1.747 7.15)
+		(end -1.747 -2.65)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "e8ef30d5-1a2f-470b-8322-7244a1c358e2")
+	)
+	(fp_line
+		(start -1.747 -2.65)
+		(end 10.247 -2.65)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a5224d45-74b1-40f4-b0cc-b6a074851eed")
+	)
+	(fp_line
+		(start 8.15 6.15)
+		(end 0.35 6.15)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "3ee288b8-954e-461d-ae6c-d628633525c8")
+	)
+	(fp_line
+		(start 8.15 -1.65)
+		(end 8.15 6.15)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "1633ca27-bcc5-45e5-b27b-c40ec4bc53d0")
+	)
+	(fp_line
+		(start 0.35 6.15)
+		(end 0.35 -1.65)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "2558e656-e6fe-499c-b06c-ae427828bd6b")
+	)
+	(fp_line
+		(start 0.35 -1.65)
+		(end 8.15 -1.65)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "18f66f55-822f-4ebe-a1e0-b7ffcbc295a7")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 4.25 2.25 360)
+		(layer "F.Fab")
+		(uuid "8d413df5-2a99-4fc8-9cea-29816a967c43")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at 0 0 180)
+		(size 1.493 1.493)
+		(drill 0.96)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "d9f9e074-baa7-446d-aae6-38d08a375973")
+	)
+	(pad "2" thru_hole circle
+		(at 0 4.5 180)
+		(size 1.493 1.493)
+		(drill 0.96)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "4b3607ac-7414-4e44-9f78-a39363ccff89")
+	)
+	(pad "3" thru_hole circle
+		(at 8.5 4.5 180)
+		(size 1.493 1.493)
+		(drill 0.96)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "2d33c0d3-6917-4bc9-bb44-aa42a08990c5")
+	)
+	(pad "4" thru_hole circle
+		(at 8.5 0 180)
+		(size 1.493 1.493)
+		(drill 0.96)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "7983870f-5ef1-4b50-b733-bf41ac08e0d2")
+	)
+	(model "3101.stp"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
