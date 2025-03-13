@@ -13,7 +13,7 @@ The TinkerPod is an ideal hardware platform for designers and makers to explore,
 The TinkerPod was designed to have 3 versions. All the versions are currently supported.
 The main difference between versions is the parts list, complexity of assembly and features.
 
-// TinkerPod family photo.
+![Tinkerpod family photo](imgs/tinker-family.jpg)
 
 - [v1 TinkerArt](v1/): This version offers generative art functionality and can be programmed to create unique art pieces.
 - [v2 TinkerPlay](v2/): This version offers a variety of games and functions, including games like pong, a timer, an etch-a-sketch inspired drawing function
