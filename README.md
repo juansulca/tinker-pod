@@ -78,6 +78,8 @@ Contributions are welcome and appreciated. If you have any suggestions or improv
 
 ## License
 
-The TinkerPod firmware is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-// Add hardware license for the the other files
-// Add copyright for the other files
+The TinkerPod is licensed under the following terms:
+
+- Software: MIT License (see [LICENSE](LICENSE))
+- Hardware: CERN Open Hardware Licence Version 2 - Permissive (see [LICENSE_OHL](LICENSE_OHL))
+- Documentation: CC-BY-SA-4.0 (see [LICENSE_CC](LICENSE_CC))
