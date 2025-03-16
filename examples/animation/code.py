@@ -32,7 +32,7 @@ HEIGHT = 128
 displayio.release_displays()
 # use the integrated I2C STEMMA connector
 i2c = board.STEMMA_I2C()
-# match the device address, usually maked on the screen PCB
+# match the device address, usually marked on the screen PCB
 display_bus = displayio.I2CDisplay(i2c, device_address=0x3D)
 # create the display controller
 display = adafruit_ssd1327.SSD1327(display_bus, width=WIDTH, height=HEIGHT)

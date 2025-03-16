@@ -67,7 +67,7 @@ managing the dependencies for the firmware.
 
 The hardware for this project took inspiration from the following sources:
 
-- [Adafruit Charger BFF for QT Py] (https://github.com/adafruit/Adafruit-Charger-BFF-PCB)
+- [Adafruit Charger BFF for QT Py](https://github.com/adafruit/Adafruit-Charger-BFF-PCB)
 - [Soldered Inkplate 2](https://github.com/SolderedElectronics/Soldered-Inkplate-2-hardware-design/tree/main)
 - [SQRT](https://ksawerykomputery.com/works/sqrt)
 - [Button debounce article](https://hackaday.com/2015/12/09/embed-with-elliot-debounce-your-noisy-buttons-part-i/)

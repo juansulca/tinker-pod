@@ -71,7 +71,6 @@ More information about this library can be found in the official [docs](https://
     ![final assembly](./imgs/before_closing.jpeg)
 
 > ⚠️ Do not unplug the device from your computer without ejecting it properly.
-> This can cause the firmware to go away.
 
 ## Official mods
 
