@@ -1,4 +1,4 @@
-from displayio import Group, Bitmap, Palette, TileGrid
+from displayio import Group, Bitmap, Palette, TileGrid, OnDiskBitmap
 from adafruit_ticks import ticks_ms, ticks_less, ticks_add
 from adafruit_display_shapes.rect import Rect
 import time
@@ -10,6 +10,19 @@ _C_BLACK = 0x000000 # Color code for black
 _C_WHITE = 0xDDDDDD # Color code for white
 BLACK = 0 # palette index for black
 WHITE = 1 # palette index for white
+
+sprite_sheet = OnDiskBitmap("/TP_draw.bmp")
+
+def make_context_menu():
+  sprite = TileGrid(sprite_sheet, pixel_shader=sprite_sheet.pixel_shader, width=64, height=64, tile_width=16, tile_height=16, default_tile=4)
+  sprite[0, 0] = 0
+  sprite[0, 3] = 3
+  sprite[3, 0] = 1
+  sprite[3, 3] = 2
+  group = Group(scale=2)
+  group.append(sprite)
+
+  return group
 
 def make_canvas():
   """
@@ -33,6 +46,8 @@ class Draw:
   def __init__(self, root):
     self.splash = Group()
     self.bitmap, self.canvas = make_canvas()
+    self.context_menu = make_context_menu()
+    self.context_menu.hidden = True
     # Create the visual maker for the pen
     self.marker = Rect(0, 0, BRUSH_SIZE, BRUSH_SIZE, outline=0x888888)
     # Store the position of the pen and set the pen state
@@ -41,6 +56,7 @@ class Draw:
     # Add the UI elements to the view
     self.splash.append(self.canvas)
     self.splash.append(self.marker)
+    self.splash.append(self.context_menu)
     root.append(self.splash)
 
   def setPixel(self, x, y, color = 0):
@@ -71,25 +87,29 @@ class Draw:
     # clear the canvas to set it black
     self.clear()
     # set the how long to wait before moving the pen
-    deadline = ticks_add(ticks_ms(), 150)
+    deadline = ticks_add(ticks_ms(), 20)
 
     while True:
       now = ticks_ms()
       if ticks_less(deadline, now):
         # if all buttons are pressed, show the context menu
         if not shake.value:
+          self.context_menu.hidden = False
           time.sleep(0.4)
           while True:
             # wait for user input
             if not btn_x.value:
               # Toggle pen down
               self.pen_down = not self.pen_down
+              self.context_menu.hidden = True
               break
             if not btn_y.value:
               # close context menu
+              self.context_menu.hidden = True
               break
             if not btn_a.value:
               # clear screen
+              self.context_menu.hidden = True
               self.clear()
               break
             if not btn_b.value:
