@@ -1,8 +1,6 @@
 # TinkerPod v3 (latest)
 
-This version is the more advanced version of the TinkerPod. It includes additional features and improvements
-over the previous versions. This version enhanced the functionality and implementation of the platform.
-In this version everything is integrated into a single PCB.
+The latest evolution of TinkerPod delivers enhanced functionality and streamlined design through single-PCB integration. This version builds upon its predecessors, offering improved features and more robust implementation while maintaining the platform's core functionality.
 
 The CAD and productions files for v3 con be found in the [hardware](hardware/) directory. Which is devided in:
 
