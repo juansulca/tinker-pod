@@ -42,33 +42,36 @@ More information about this library can be found in the official [docs](https://
 ## Assembly
 
 1. Flash circuit python on the QT PY RP2040.
-   1. Open the official [site](https://circuitpython.org/board/adafruit_qtpy_rp2040/) and download the latest version of circuit python.
+
+   1. Open the official [site](https://circuitpython.org/board/adafruit_qtpy_rp2040/) and download the latest version of CircuitPython.
    2. While holding the _boot_ button in the QT PY, plug it into a computer using the USB-C cable. Different version of the QT PY might need a different button to access bootloader mode, please check the official [docs](https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython) for the specific board.
-   3. The device should appears mounted in the OS as **RPI-RP2**, this might be different for other boards other than the RP2040 board.
-   4. Drag and drop the `.UF2` file (downloaded in step 1) to the `RPI-RP2` boot drive.
+      ![boot button location](./imgs/boot_button.jpg)
+   3. The device should appears mounted in the OS as **RPI-RP2**. This might be different for other boards other than the RP2040 board.
+   4. Drag and drop the `.UF2` file (downloaded in step 1) to the `RPI-RP2` drive.
    5. After a couple of seconds the onboard neopixel (LED) will flash and a new drive will appear in the computer, this time it should be called **CIRCUITPY**.
    6. ⚠️ Always eject the device before unplugging the cable.
-   7. The device is ready to be installed.
-2. Solder the pins to the QT PY.
-3. Place the pins in the microcontroller and carefully place both on the breadboard.
-4. Solder the pins to the microcontroller.
-5. Place the microcontroller in the the breadboard.
-   ![microcontroller breadboard](./imgs/place_breadboard.jpeg)
-6. Connect the screen cable to the screen socket.
-   ![screen assembly](./imgs/screen_assembly.jpeg)
-7. Wire the screen cables following this diagram:
+
+2. Solder the headers to the QT PY.
+   1. Position the headers in the QT PY and carefully place both the breadboard.
+      ![header positioning](./imgs/headers_1.jpg)
+   2. Solder the headers to the microcontroller.
+      ![header soldering](./imgs/headers_2.jpg)
+3. Place the microcontroller on the breadboard and connect the screen cable to the screen socket.
+   ![screen connector placement](./imgs/screen_assembly.jpg)
+4. Connect the screen to the QT PY following this diagram:
    ![Tinkerpod v1 wiring diagram](./imgs/TinkerPod_v1.png)
-8. Plug the USB C cable to the micro controller.
-   ![microcontroller usb](./imgs/board_usb.jpeg)
-9. A new device should show up in your file system. Usually the device will be called `CIRCUITPY`
-10. Download the [firmware/](firmware/) directory for this version.
-11. Copy all the files from the `firmware/` directory (`code.py` and `lib/`) to the `CIRCUITPY` drive.
-12. The device will restart and generative art function should start.
-13. Place the screen in the top part of the case.
-14. Place the breadboard in the bottom part of the case.
-    ![microcontroller breadboard](./imgs/elements_case.jpeg)
-15. Close the case with some tape.
-    ![final assembly](./imgs/before_closing.jpeg)
+5. Plug the USB-C cable to the micro controller.
+   ![microcontroller breadboard](./imgs/place_breadboard.jpg)
+6. Check your file explorer for new drive called CIRCUITPY
+7. Download the `firmware/` directory for this version.
+8. Copy all the files from the `firmware/` directory (`code.py` and `lib/`) to the **CIRCUITPY** drive.
+9. After the device restarts, look at the OLED screen which will display a generative art function.
+10. Place the screen in the top part of the enclosure.
+    ![screen in top enclosure](./imgs/screen_top_enclosure.jpg)
+11. Place the breadboard in the bottom part of the enclosure.
+    ![breadboard in enclosure and screen](./imgs/enclosure_components.jpg)
+12. Close the enclosure with some tape.
+    ![final](./imgs/final.jpg)
 
 > ⚠️ Do not unplug the device from your computer without ejecting it properly.
 
