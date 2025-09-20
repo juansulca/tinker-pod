@@ -88,12 +88,24 @@ class Draw:
     self.clear()
     # set the how long to wait before moving the pen
     deadline = ticks_add(ticks_ms(), 20)
+    clear_shakes = ticks_add(ticks_ms(), 1000)
+    shake_count = 0
 
     while True:
       now = ticks_ms()
+
+      if ticks_less(clear_shakes, now):
+        # reset the shake count every 600ms
+        clear_shakes = ticks_add(now, 600)
+        shake_count = 0
+
+      if not shake.value:
+        shake_count += 1
+
       if ticks_less(deadline, now):
         # if all buttons are pressed, show the context menu
-        if not shake.value:
+        if shake_count > 3:
+          shake_count = 0
           self.context_menu.hidden = False
           time.sleep(0.4)
           while True:
@@ -116,6 +128,7 @@ class Draw:
               # exit drawing application
               return
             time.sleep(0.1)
+          continue
 
 
         if not btn_y.value:
